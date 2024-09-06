@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type"text/css" href="style.css"/>
+    <title>Information Page</title>
+</head>
+<body>
+    <div class="navbar container">
+        <a href="index.html">Start</a>
+        <a href="info.html" class="active">Information</a>
+        <a href="sources.html">Sources</a>
+    </div>
+
+    <div class="content">
+        <h1 class="welcome-font">Welcome to the Demeter Information Page!</h1>
+    
+        <label for="topic">Select a topic to learn more about Demeter:</label>
+        <select name="topic" id="topic" onchange="showInfo()">
+            <option value="family">Family</option>
+            <option value="story">Story</option>
+            <option value="symbolism">Symbolism</option>
+            <option value="worship">Worship</option>
+        </select>
+
+        <div id="info" class="info">
+            <h3>Family</h3>
+            <p>Demeter was the daughter of Rhea and Cronus, and the sister of Zeus, Hera, Hades, Poseidon, and Hestia. She had two children with Zeus, Persephone and Iacchus, and also had a love affair with Iasion, a Titan. She was invoked under many titles and epithets, including</p>
+            <ul>
+                <li>potnia (“mistress”)</li>
+                <li>despoina (“mistress of the household”)</li>
+                <li>thesmophoros (“bringer of law”)</li>
+                <li>sito (“she of the grain”)</li>
+                <li>chthonia (“she of the earth”)</li>
+            </ul>
+        </div>
+
+        <div id="image-container">
+            <img id="topic-img" src="family-tree2.avif" alt="Demeter Family">
+        </div>
+    </div>
+
+    <script>
+        function showInfo() {
+            const topicInfo = {
+                family: {
+                    text: `<h3>Family</h3>
+                          <p>Demeter was the daughter of Rhea and Cronus, and the sister of Zeus, Hera, Hades, Poseidon, and Hestia. She had two children with Zeus, Persephone and Iacchus, and also had a love affair with Iasion, a Titan.</p>`,
+                    img: 'family-tree2.avif'
+                },
+                story: {
+                    text: `<h3>Story</h3>
+                          <p>Demeter's story is often centered on her daughter Persephone, who was taken by Hades, the god of the underworld. Demeter searched for Persephone, and during her journey she revealed her secret rites to the people of Eleusis.</p>`,
+                    img: 'persephone.avif'
+                },
+                symbolism: {
+                    text: `<h3>Symbolism</h3>
+                           <p>The story of Demeter and Persephone is thought to symbolize the changing seasons and the cycle of life to death. Persephone's time in the underworld would represent winter, while her return to the surface each spring would represent the growth of spring flowers.</p>`,
+                    img: 'demeter-persephone.jpeg'
+                },
+                worship: {
+                    text: `<h3>Worship</h3>
+                          <p>Demeter was widely worshiped in ancient Greece, especially by women. Several cities held agricultural festivals in her honor.</p>`,
+                    img: 'demeter.jpg'
+                }
+            };
+
+            const selectedTopic = document.getElementById('topic').value;
+
+            document.getElementById('info').innerHTML = topicInfo[selectedTopic].text;
+            document.getElementById('topic-img').src = topicInfo[selectedTopic].img;
+            document.getElementById('topic-img').alt = selectedTopic.charAt(0).toUpperCase() + selectedTopic.slice(1);
+        }
+    </script>
+</body>
+</html>
