@@ -24,7 +24,7 @@
             <option value="worship">Worship</option>
         </select>
 
-        <div id="info" class="info">
+        <div id="topic-info" class="info">
             <h3>Family</h3>
             <p>Demeter was the daughter of Rhea and Cronus, and the sister of Zeus, Hera, Hades, Poseidon, and Hestia. She had two children with Zeus, Persephone and Iacchus, and also had a love affair with Iasion, a Titan. She was invoked under many titles and epithets, including</p>
             <ul>
@@ -37,7 +37,7 @@
         </div>
 
         <div id="image-container">
-            <img id="topic-img" src="family-tree2.avif" alt="Demeter Family">
+            <img id="topic-img" src="family-tree2.avif" alt="Demeter's Family">
         </div>
     </div>
 
@@ -68,9 +68,8 @@
 
             const selectedTopic = document.getElementById('topic').value;
 
-            document.getElementById('info').innerHTML = topicInfo[selectedTopic].text;
+            document.getElementById('topic-info').innerHTML = topicInfo[selectedTopic].text;
             document.getElementById('topic-img').src = topicInfo[selectedTopic].img;
-            document.getElementById('topic-img').alt = selectedTopic.charAt(0).toUpperCase() + selectedTopic.slice(1);
         }
     </script>
 </body>
